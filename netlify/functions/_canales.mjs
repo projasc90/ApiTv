@@ -1,7 +1,6 @@
-// Diccionario de canales para las funciones Netlify.
-// NOTA: mantener sincronizado con canales.json (la fuente canónica en la raíz).
-export default {
-  "Repretel Canal 6": "https://ddycmnicl95kp.cloudfront.net/live/w0wu3g4t42xb/master.m3u8",
-  "Repretel Canal 11": "https://ddycmnicl95kp.cloudfront.net/live/ez84cni2g3hk/master.m3u8",
-  "Repretel Canal 4": "https://ddycmnicl95kp.cloudfront.net/live/1a04m9qnerwa/master.m3u8"
-};
+// Fuente única de canales: importa el canales.json canónico de la raíz.
+// Netlify (esbuild) lo inlinea en el bundle en build time, así que editar
+// canales.json + push es suficiente para actualizar los canales.
+import canales from '../../canales.json' with { type: 'json' };
+
+export default canales;
