@@ -60,13 +60,26 @@ export default async function handler(req, res) {
     }
 
     const data = await upstream.text();
+    const origin = new URL(targetUrl).origin;
 
-    // Reescritura de segmentos a rutas absolutas apuntando al dominio original
+    // Reescritura de rutas relativas a absolutas apuntando al dominio original.
+    // Incluye el SERVER-URI del content steering: si es raíz-relativa ("/steering/...")
+    // se resuelve contra el origen; si es relativa simple, contra la carpeta del manifiesto.
     const modifiedPlaylist = data
       .split('\n')
       .map((line) => {
         const trimmedLine = line.trim();
-        if (trimmedLine && !trimmedLine.startsWith('#') && !trimmedLine.startsWith('http')) {
+        if (!trimmedLine) return trimmedLine;
+
+        if (trimmedLine.startsWith('#EXT-X-CONTENT-STEERING')) {
+          return trimmedLine.replace(/SERVER-URI="([^"]*)"/, (match, uri) => {
+            if (/^https?:\/\//i.test(uri)) return match;
+            const prefix = uri.startsWith('/') ? origin : baseUrl;
+            return `SERVER-URI="${prefix}${uri}"`;
+          });
+        }
+
+        if (!trimmedLine.startsWith('#') && !trimmedLine.startsWith('http')) {
           return baseUrl + trimmedLine;
         }
         return trimmedLine;
