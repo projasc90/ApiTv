@@ -1,4 +1,4 @@
-import canales from '../canales.json';
+import canales from '../canales.json' with { type: 'json' };
 
 export default async function handler(req, res) {
   // Inyectar cabeceras CORS para webOS (evita que el reproductor aborte la reproducción)
