@@ -42,7 +42,13 @@ export default async (req) => {
     attrs.push(`group-title="${group}"`);
 
     lines.push(`#EXTINF:-1 ${attrs.join(' ')},${name}`);
-    lines.push(`${base}/api/proxy?id=${encodeURIComponent(id)}`);
+    // direct: true → el TV va directo al origen (canales sin bloqueo CORS/UA,
+    // p. ej. Akamai que rechaza IPs de datacenter).
+    if (isObject && value.direct) {
+      lines.push(url);
+    } else {
+      lines.push(`${base}/api/proxy?id=${encodeURIComponent(id)}`);
+    }
   }
 
   return new Response(lines.join('\n') + '\n', {

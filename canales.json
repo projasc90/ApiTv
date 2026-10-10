@@ -2,7 +2,10 @@
   "Repretel Canal 6": "https://ddycmnicl95kp.cloudfront.net/live/w0wu3g4t42xb/master.m3u8",
   "Repretel Canal 11": "https://ddycmnicl95kp.cloudfront.net/live/ez84cni2g3hk/master.m3u8",
   "Repretel Canal 4": "https://ddycmnicl95kp.cloudfront.net/live/1a04m9qnerwa/master.m3u8",
-  "Las Estrellas": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8" 
+  "Las Estrellas": {
+    "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8",
+    "direct": true
+  }
 }
 
 
