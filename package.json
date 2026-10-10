@@ -5,6 +5,6 @@
   "type": "module",
   "description": "Proxy inverso serverless para streams IPTV (CORS + User-Agent) desplegado en Vercel",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   }
 }
