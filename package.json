@@ -1,0 +1,10 @@
+{
+  "name": "apitv-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Proxy inverso serverless para streams IPTV (CORS + User-Agent) desplegado en Vercel",
+  "engines": {
+    "node": "20.x"
+  }
+}
