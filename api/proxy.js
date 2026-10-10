@@ -63,8 +63,10 @@ export default async function handler(req, res) {
     const origin = new URL(targetUrl).origin;
 
     // Reescritura de rutas relativas a absolutas apuntando al dominio original.
-    // Incluye el SERVER-URI del content steering: si es raíz-relativa ("/steering/...")
-    // se resuelve contra el origen; si es relativa simple, contra la carpeta del manifiesto.
+    // Compatibilidad con players antiguos (Netcast/webOS 4.x): se elimina la etiqueta
+    // de content steering (no la soportan y puede abortar la carga del manifiesto);
+    // el player usará el orden natural de las variantes, que coincide con la
+    // PATHWAY-PRIORITY del documento de steering.
     const modifiedPlaylist = data
       .split('\n')
       .map((line) => {
@@ -72,11 +74,7 @@ export default async function handler(req, res) {
         if (!trimmedLine) return trimmedLine;
 
         if (trimmedLine.startsWith('#EXT-X-CONTENT-STEERING')) {
-          return trimmedLine.replace(/SERVER-URI="([^"]*)"/, (match, uri) => {
-            if (/^https?:\/\//i.test(uri)) return match;
-            const prefix = uri.startsWith('/') ? origin : baseUrl;
-            return `SERVER-URI="${prefix}${uri}"`;
-          });
+          return '';
         }
 
         if (!trimmedLine.startsWith('#') && !trimmedLine.startsWith('http')) {
@@ -84,6 +82,7 @@ export default async function handler(req, res) {
         }
         return trimmedLine;
       })
+      .filter((line) => line !== '')
       .join('\n');
 
     res.setHeader('Content-Type', 'application/vnd.apple.mpegurl');
