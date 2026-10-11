@@ -12,3 +12,9 @@
   to = "/.netlify/functions/playlist"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/api/logo"
+  to = "/.netlify/functions/logo"
+  status = 200
+  force = true

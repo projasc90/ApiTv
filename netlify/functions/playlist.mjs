@@ -38,7 +38,7 @@ export default async (req) => {
     const group = (isObject && value.group) || 'TV';
 
     const attrs = [`tvg-id="${id}"`];
-    if (logo) attrs.push(`tvg-logo="${logo}"`);
+    if (logo) attrs.push(`tvg-logo="${base}/api/logo?u=${encodeURIComponent(logo)}"`);
     attrs.push(`group-title="${group}"`);
 
     lines.push(`#EXTINF:-1 ${attrs.join(' ')},${name}`);
