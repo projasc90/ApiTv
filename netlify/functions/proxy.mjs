@@ -29,10 +29,24 @@ export default async (req) => {
 
   const url = new URL(req.url);
   const id = url.searchParams.get('id');
-  const targetUrl = id ? canales[id] : undefined;
+  const relPath = url.searchParams.get('path');
+  const entry = id ? canales[id] : undefined;
+  const channelUrl = typeof entry === 'object' && entry !== null ? entry.url : entry;
 
-  if (!targetUrl) {
+  if (!channelUrl) {
     return json(404, { error: 'Identificador de canal no encontrado' });
+  }
+
+  // Modo "todo por el proxy": ?path= resuelve un recurso relativo (variante o
+  // segmento) contra la carpeta del manifiesto del canal. Todo el tráfico del
+  // canal pasa por Netlify (cert DigiCert, la única CA que el webOS confía).
+  let targetUrl;
+  try {
+    targetUrl = relPath
+      ? new URL(relPath, new URL('.', channelUrl)).toString()
+      : channelUrl;
+  } catch {
+    return json(400, { error: 'path inválido' });
   }
 
   const baseUrl = targetUrl.substring(0, targetUrl.lastIndexOf('/') + 1);
@@ -71,18 +85,27 @@ export default async (req) => {
     }
 
     const data = await upstream.text();
+    const proxyBase = `${url.origin}/api/proxy?id=${encodeURIComponent(id)}&path=`;
 
-    // Se elimina content steering (players webOS antiguos no lo soportan)
+    // Reescritura "todo por el proxy": cada URI del manifiesto (variante o
+    // segmento) se convierte en una llamada al proxy con su ruta absoluta,
+    // de modo que el TV nunca habla directamente con el origen.
+    // Se elimina content steering (players webOS antiguos no lo soportan).
     const modifiedPlaylist = data
       .split('\n')
       .map((line) => {
         const trimmedLine = line.trim();
         if (!trimmedLine) return '';
         if (trimmedLine.startsWith('#EXT-X-CONTENT-STEERING')) return '';
-        if (!trimmedLine.startsWith('#') && !trimmedLine.startsWith('http')) {
-          return baseUrl + trimmedLine;
+        if (trimmedLine.startsWith('#')) return trimmedLine;
+
+        let absolute;
+        try {
+          absolute = new URL(trimmedLine, targetUrl).toString();
+        } catch {
+          return trimmedLine;
         }
-        return trimmedLine;
+        return proxyBase + encodeURIComponent(absolute);
       })
       .filter((line) => line !== '')
       .join('\n');
