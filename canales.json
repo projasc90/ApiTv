@@ -391,17 +391,20 @@
   "Repretel Canal 11": {
     "url": "https://d2h2wh04y3aqtb.cloudfront.net/hls/ez84cni2g3hk/3_4/index.m3u8",
     "logo": "https://i.imgur.com/EpZPvAm.png",
-    "epg": "Canal11.cr"
+    "epg": "Canal11.cr",
+    "direct": true
   },
   "Repretel Canal 4": {
     "url": "https://d2pdmpypqinyd5.cloudfront.net/4_5/index.m3u8",
     "logo": "https://i.imgur.com/5arZEgO.png",
-    "epg": "Canal4.cr"
+    "epg": "Canal4.cr",
+    "direct": true
   },
   "Repretel Canal 6": {
     "url": "https://d6qmllupbc5d2.cloudfront.net/hls/w0wu3g4t42xb/3_4/index.m3u8",
     "logo": "https://i.imgur.com/nfKJftW.png",
-    "epg": "Canal6.cr"
+    "epg": "Canal6.cr",
+    "direct": true
   },
   "RTG (720p)": {
     "url": "https://5e50264bd6766.streamlock.net/radtvguerrero/videoradtvguerrero/playlist.m3u8",
