@@ -160,6 +160,41 @@
     "group": "Culture;Entertainment",
     "direct": true
   },
+  "Cinemax Classics (1080p)": {
+    "url": "http://23.237.104.106:8080/USA_5STARMAX/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/Cinemax_Classics_Logo.png/960px-Cinemax_Classics_Logo.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "CinemaxClassics.us"
+  },
+  "Cinemax Hits (1080p)": {
+    "url": "http://23.237.104.106:8080/USA_MOREMAX/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Cinemax_Hits_Logo.png/960px-Cinemax_Hits_Logo.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "CinemaxHits.us"
+  },
+  "Cinemax Latin America (720p)": {
+    "url": "https://streaming.onnethn.com/CINEMAX/playlist.m3u8",
+    "logo": "https://i.imgur.com/cZWoJWD.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "CinemaxSpanish.us"
+  },
+  "Cinemax Latin America HD (1080p)": {
+    "url": "http://38.65.175.84:8000/play/a093/index.m3u8",
+    "logo": "https://i.imgur.com/cZWoJWD.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "CinemaxSpanish.us"
+  },
+  "Cinemax West (720p)": {
+    "url": "http://23.237.104.106:8080/USA_CINEMAX_WEST/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Cinemax_2016.svg/960px-Cinemax_2016.svg.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "CineMAXPacific.us"
+  },
   "Colosal TV (720p)": {
     "url": "http://tv.ticosmedia.com:1935/COLOSAL/COLOSAL/playlist.m3u8",
     "logo": "https://i.imgur.com/0DZB3eB.png",
@@ -183,6 +218,13 @@
     "logo": "https://i.ibb.co/vJZqrFY/a4ed367c69c23110d458a332af95be0be64566f288ccb5f261689344e6ba5e0d.png",
     "group": "General",
     "direct": true
+  },
+  "Disney Junior (480p)": {
+    "url": "http://tvsen5.aynascope.net/disney/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/2024_Disney_Jr._Logo.svg/960px-2024_Disney_Jr._Logo.svg.png",
+    "group": "Kids",
+    "direct": true,
+    "epg": "DisneyJunior.us"
   },
   "Eclipse TV (720p)": {
     "url": "https://vdo6.instainternet.com:3272/live/jobetalborezlive.m3u8",
@@ -232,6 +274,27 @@
     "logo": "https://i.imgur.com/NNd1lYl.png",
     "group": "TV",
     "direct": true
+  },
+  "HBO 2 Latin America (576p)": {
+    "url": "http://38.65.175.84:8000/play/a0ct/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/HBO2_logo.svg/960px-HBO2_logo.svg.png",
+    "group": "Movies;Series",
+    "direct": true,
+    "epg": "HBO2.co"
+  },
+  "HBO 2 Latin America HD (1080p)": {
+    "url": "http://45.171.64.30:6060/play/a00i/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/HBO2_logo.svg/960px-HBO2_logo.svg.png",
+    "group": "Movies;Series",
+    "direct": true,
+    "epg": "HBO2.co"
+  },
+  "HBO Family Latin America (1080p)": {
+    "url": "http://45.171.64.30:6060/play/a00k/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/HBO_Family.svg/960px-HBO_Family.svg.png",
+    "group": "Family",
+    "direct": true,
+    "epg": "HBOFamily.co"
   },
   "ICRTV Colima (1080p)": {
     "url": "https://5fc584f3f19c9.streamlock.net/icrtvcolima/smil:icrtvcolima.smil/playlist.m3u8",
@@ -319,6 +382,13 @@
     "logo": "https://i.imgur.com/pw4NZK1.png",
     "group": "Movies",
     "direct": true
+  },
+  "National Geographic Latin America (1080p)": {
+    "url": "https://barinaslive1.boldmss.com/NATGEO/NATGEO.isml/NATGEO.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Natgeologo.svg/960px-Natgeologo.svg.png",
+    "group": "Documentary",
+    "direct": true,
+    "epg": "NationalGeographic.us"
   },
   "Nayarit Comunica (1080p)": {
     "url": "https://live.iplanay.gob.mx/hls/nayarittv.m3u8",
@@ -719,6 +789,13 @@
     "logo": "https://i.imgur.com/HzGs1Eh.png",
     "group": "Music",
     "direct": true
+  },
+  "Warner Channel Colombia (1080p)": {
+    "url": "http://38.134.250.110:8000/play/a029/index.m3u8",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Warner_Channel_2026.svg/960px-Warner_Channel_2026.svg.png",
+    "group": "Movies",
+    "direct": true,
+    "epg": "WarnerChannel.co"
   },
   "WeatherSpy (720p)": {
     "url": "https://jukin-weatherspy-2-mx.samsung.wurl.tv/playlist.m3u8",
