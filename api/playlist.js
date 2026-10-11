@@ -48,7 +48,7 @@ export default async function handler(req, res) {
 
     // epg: tvg-id del EPG de iptv-epg.org (coincide con <channel id="...">)
     const attrs = [`tvg-id="${(isObject && value.epg) || id}"`];
-    if (logo) attrs.push(`tvg-logo="${logo}"`);
+    if (logo) attrs.push(`tvg-logo="${base}/api/logo?u=${encodeURIComponent(logo)}"`);
     attrs.push(`group-title="${group}"`);
 
     lines.push(`#EXTINF:-1 ${attrs.join(' ')},${name}`);
