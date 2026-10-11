@@ -376,12 +376,6 @@
     "group": "TV",
     "direct": true
   },
-  "Repretel 6 HD Nuevo": {
-    "url": "https://ddycmnicl95kp.cloudfront.net/live/w0wu3g4t42xb/master.m3u8",
-    "logo": "https://i.imgur.com/nfKJftW.png",
-    "group": "Costa Rica",
-    "direct": true
-  },
   "Repretel Canal 11": {
     "url": "https://d2h2wh04y3aqtb.cloudfront.net/hls/ez84cni2g3hk/3_4/index.m3u8",
     "logo": "https://i.imgur.com/EpZPvAm.png"
