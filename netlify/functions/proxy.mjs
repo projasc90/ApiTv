@@ -85,12 +85,11 @@ export default async (req) => {
     }
 
     const data = await upstream.text();
-    const proxyBase = `${url.origin}/api/proxy?id=${encodeURIComponent(id)}&path=`;
 
-    // Reescritura "todo por el proxy": cada URI del manifiesto (variante o
-    // segmento) se convierte en una llamada al proxy con su ruta absoluta,
-    // de modo que el TV nunca habla directamente con el origen.
-    // Se elimina content steering (players webOS antiguos no lo soportan).
+    // Modo híbrido: el master (y cualquier manifiesto) se sirve por el proxy
+    // para inyectar CORS y eliminar content steering, pero las URIs de
+    // variantes y segmentos se resuelven a URLs ABSOLUTAS del origen, de modo
+    // que el video no consume ancho de banda del proxy.
     const modifiedPlaylist = data
       .split('\n')
       .map((line) => {
@@ -99,13 +98,11 @@ export default async (req) => {
         if (trimmedLine.startsWith('#EXT-X-CONTENT-STEERING')) return '';
         if (trimmedLine.startsWith('#')) return trimmedLine;
 
-        let absolute;
         try {
-          absolute = new URL(trimmedLine, targetUrl).toString();
+          return new URL(trimmedLine, targetUrl).toString();
         } catch {
           return trimmedLine;
         }
-        return proxyBase + encodeURIComponent(absolute);
       })
       .filter((line) => line !== '')
       .join('\n');
