@@ -52,8 +52,12 @@ export default async function handler(req, res) {
     attrs.push(`group-title="${group}"`);
 
     lines.push(`#EXTINF:-1 ${attrs.join(' ')},${name}`);
-    // Cada canal apunta al proxy HLS, que inyecta CORS y reescribe el manifiesto
-    lines.push(`${base}/api/proxy?id=${encodeURIComponent(id)}`);
+    if (isObject && value.direct) {
+      lines.push(url);
+    } else {
+      // El proxy inyecta CORS y reescribe el manifiesto HLS.
+      lines.push(`${base}/api/proxy?id=${encodeURIComponent(id)}`);
+    }
   }
 
   res.setHeader('Content-Type', 'audio/x-mpegurl; charset=utf-8');
