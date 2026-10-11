@@ -27,7 +27,17 @@ export default async (req) => {
   const host = (req.headers.get('x-forwarded-host') || req.headers.get('host') || '').split(',')[0].trim();
   const base = `${proto}://${host}`;
 
-  const lines = ['#EXTM3U'];
+  // Guías EPG (XMLTV de iptv-epg.org) de los países con canales mapeados
+  const guides = [...new Set(
+    Object.values(canales)
+      .filter((v) => v && typeof v === 'object' && v.epg)
+      .map((v) => v.epg.split('.').pop().toLowerCase())
+  )].sort().map((cc) => `https://iptv-epg.org/files/epg-${cc}.xml.gz`);
+  const tvgUrl = guides.join(',');
+
+  const lines = [tvgUrl
+    ? `#EXTM3U x-tvg-url="${tvgUrl}" url-tvg="${tvgUrl}"`
+    : '#EXTM3U'];
   for (const [id, value] of Object.entries(canales)) {
     const isObject = typeof value === 'object' && value !== null;
     const url = isObject ? value.url : value;
@@ -37,7 +47,8 @@ export default async (req) => {
     const logo = isObject ? value.logo : undefined;
     const group = (isObject && value.group) || 'TV';
 
-    const attrs = [`tvg-id="${id}"`];
+    // epg: tvg-id del EPG de iptv-epg.org (coincide con <channel id="...">)
+    const attrs = [`tvg-id="${(isObject && value.epg) || id}"`];
     if (logo) attrs.push(`tvg-logo="${base}/api/logo?u=${encodeURIComponent(logo)}"`);
     attrs.push(`group-title="${group}"`);
 

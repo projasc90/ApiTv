@@ -21,13 +21,15 @@
     "url": "https://mdstrm.com/live-stream-playlist/60b578b060947317de7b57ac.m3u8",
     "logo": "https://i.imgur.com/Og17U9N.png",
     "group": "News",
-    "direct": true
+    "direct": true,
+    "epg": "adn40.mx"
   },
   "Agrotendencia TV (1080p)": {
     "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8",
     "logo": "https://i.imgur.com/frd60hR.png",
     "group": "Outdoor",
-    "direct": true
+    "direct": true,
+    "epg": "AgrotendenciaTV.cr"
   },
   "Alcance TV (720p)": {
     "url": "https://5bf8041cb3fed.streamlock.net/AlcanceTV/AlcanceTV/playlist.m3u8",
@@ -99,7 +101,8 @@
     "url": "https://5fc584f3f19c9.streamlock.net/canal22/smil:canal22.smil/playlist.m3u8",
     "logo": "https://i.imgur.com/6qiYvhe.png",
     "group": "TV",
-    "direct": true
+    "direct": true,
+    "epg": "Canal22.mx"
   },
   "Canal 26 Aguascalientes (1080p)": {
     "url": "https://60417ddeaf0d9.streamlock.net/telemetrika3/smil:telemetrika3.smil/playlist.m3u8",
@@ -123,7 +126,8 @@
     "url": "https://5e50264bd6766.streamlock.net/canal442/videocanal442/playlist.m3u8",
     "logo": "https://i.imgur.com/YDp8MlN.png",
     "group": "TV",
-    "direct": true
+    "direct": true,
+    "epg": "Canal44-udgtv.mx"
   },
   "Canal 44 Ciudad Juárez (720p)": {
     "url": "https://5e50264bd6766.streamlock.net/canal44/videocanal44/playlist.m3u8",
@@ -141,7 +145,8 @@
     "url": "https://mdstrm.com/live-stream-playlist/5a7b1e63a8da282c34d65445.m3u8",
     "logo": "https://i.imgur.com/nefPi2Y.png",
     "group": "General",
-    "direct": true
+    "direct": true,
+    "epg": "Canal8.cr"
   },
   "Canal Parlamento del Congreso de Jalisco (720p)": {
     "url": "https://60417ddeaf0d9.streamlock.net/srtc/smil:srtc.smil/playlist.m3u8",
@@ -195,7 +200,8 @@
     "url": "https://livecdn.enlace.plus/enlace/smil:enlace-hd.smil/playlist.m3u8",
     "logo": "https://i.imgur.com/YwUVTmS.png",
     "group": "Religious",
-    "direct": true
+    "direct": true,
+    "epg": "Enlace.cr"
   },
   "Expresa TV (720p)": {
     "url": "https://5ca9af4645e15.streamlock.net/teleradio/smil:teleradio.smil/playlist.m3u8",
@@ -249,12 +255,14 @@
     "url": "https://live-scjn.ovp-vivaro.digital/ovp-origin/638a22b47746d/playlist.m3u8",
     "logo": "https://i.imgur.com/zyAS1hk.png",
     "group": "Legislative",
-    "direct": true
+    "direct": true,
+    "epg": "JusticiaTV.mx"
   },
   "Las Estrellas": {
     "url": "https://channel01-onlymex.akamaized.net/hls/live/2022749/event01/index.m3u8",
     "direct": true,
-    "logo": "https://i.imgur.com/g5ShxZ7.png"
+    "logo": "https://i.imgur.com/g5ShxZ7.png",
+    "epg": "LasEstrellas.mx"
   },
   "Limón TV (1080p)": {
     "url": "http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8",
@@ -284,13 +292,15 @@
     "url": "https://5e50264bd6766.streamlock.net/mexiquense/videomexiquense/playlist.m3u8",
     "logo": "https://i.imgur.com/iVfzakA.png",
     "group": "General",
-    "direct": true
+    "direct": true,
+    "epg": "CanalMexiquense.mx"
   },
   "Milenio Televisión (720p)": {
     "url": "https://mdstrm.com/live-stream-playlist/610178c7db32a4112d994650.m3u8",
     "logo": "https://i.imgur.com/TG1T5Oh.png",
     "group": "News",
-    "direct": true
+    "direct": true,
+    "epg": "MilenioTV.mx"
   },
   "Monte Maria (1080p)": {
     "url": "https://5ca9af4645e15.streamlock.net/montemaria/videomontemaria/playlist.m3u8",
@@ -338,13 +348,15 @@
     "url": "https://5ca9af4645e15.streamlock.net/nuevetv/videonuevetv/.m3u8",
     "logo": "https://i.imgur.com/3fzB7zY.png",
     "group": "General",
-    "direct": true
+    "direct": true,
+    "epg": "ElNu9ve.mx"
   },
   "Once México (1080p)": {
     "url": "https://vivo.canaloncelive.tv/securepkgr3/oncemexico/playlist.m3u8",
     "logo": "https://i.imgur.com/K0351vF.png",
     "group": "Education",
-    "direct": true
+    "direct": true,
+    "epg": "CanalOnce.mx"
   },
   "Presumiendo México (720p)": {
     "url": "https://60417ddeaf0d9.streamlock.net/telemetrika/smil:telemetrika.smil/playlist.m3u8",
@@ -378,15 +390,18 @@
   },
   "Repretel Canal 11": {
     "url": "https://d2h2wh04y3aqtb.cloudfront.net/hls/ez84cni2g3hk/3_4/index.m3u8",
-    "logo": "https://i.imgur.com/EpZPvAm.png"
+    "logo": "https://i.imgur.com/EpZPvAm.png",
+    "epg": "Canal11.cr"
   },
   "Repretel Canal 4": {
     "url": "https://d2pdmpypqinyd5.cloudfront.net/4_5/index.m3u8",
-    "logo": "https://i.imgur.com/5arZEgO.png"
+    "logo": "https://i.imgur.com/5arZEgO.png",
+    "epg": "Canal4.cr"
   },
   "Repretel Canal 6": {
     "url": "https://d6qmllupbc5d2.cloudfront.net/hls/w0wu3g4t42xb/3_4/index.m3u8",
-    "logo": "https://i.imgur.com/nfKJftW.png"
+    "logo": "https://i.imgur.com/nfKJftW.png",
+    "epg": "Canal6.cr"
   },
   "RTG (720p)": {
     "url": "https://5e50264bd6766.streamlock.net/radtvguerrero/videoradtvguerrero/playlist.m3u8",
@@ -494,7 +509,8 @@
     "url": "https://mdstrm.com/live-stream-playlist/62f2c855f7981b5a5a2d8763.m3u8",
     "logo": "https://i.imgur.com/y0a0xwY.png",
     "group": "TV",
-    "direct": true
+    "direct": true,
+    "epg": "TeleFormula.mx"
   },
   "Telemax (XEWH-TDT) (1080p)": {
     "url": "https://s5.mexside.net:1936/telemax/telemax/playlist.m3u8",
@@ -572,7 +588,8 @@
     "url": "https://5f2c1b0d880e5.streamlock.net/tv42/tv42.smil/.m3u8",
     "logo": "https://i.imgur.com/Of044Jx.png",
     "group": "Culture",
-    "direct": true
+    "direct": true,
+    "epg": "TVCuatro.mx"
   },
   "TV Lobo Durango (720p)": {
     "url": "https://5ca9af4645e15.streamlock.net/lobodurango/videolobodurango/playlist.m3u8",
